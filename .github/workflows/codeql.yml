@@ -90,18 +90,18 @@ jobs:
     - name: output variables
       run: |
         echo "repository variable : ${{ github.workspace }}"
-        echo "files available:"
-        ls -R /home/runner/work/
+        # echo "files available:"
+        # ls -R /home/runner/work/
 
     - uses: actions/upload-artifact@v2
       with:
         name: Code Scanning Report
-        path: ${{ github.workspace }}/security-report
+        path: /home/runner/work/code-scanning-javascript-demo/code-scanning-javascript-demo/security-report
 
     - uses: actions/upload-artifact@v2
       with:
         name: Upload sarif file
-        path: ${{ github.workspace }}/results/javascript.sarif
+        path: /home/runner/work/code-scanning-javascript-demo/results/javascript.sarif
         
 
 
