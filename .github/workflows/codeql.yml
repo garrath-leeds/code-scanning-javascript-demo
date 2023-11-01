@@ -87,6 +87,12 @@ jobs:
         token: ${{ secrets.SECURITY_TOKEN }}
         outputDir: security-report
 
+    - name: output variables
+      run: |
+        echo "repository variable : ${{ github.workspace }}"
+        echo "files available:"
+        ls -R /home/runner/work/
+
     - uses: actions/upload-artifact@v2
       with:
         name: Code Scanning Report
