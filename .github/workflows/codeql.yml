@@ -82,7 +82,7 @@ jobs:
         category: "/language:${{matrix.language}}"
 
     - name: Generate Security Report
-      uses: dsp-testing/github-security-report-action@v2 #peter-murray/github-security-report-action@v2
+      uses: peter-murray/github-security-report-action@v2
       with:
         token: ${{ secrets.SECURITY_TOKEN }}
         outputDir: security-report
@@ -91,7 +91,7 @@ jobs:
       run: |
         echo "repository variable : ${{ github.workspace }}"
         echo "files available:"
-        ls -R /home/runner/work/code-scanning-javascript-demo/code-scanning-javascript-demo/security-report
+        ls -LA /home/runner/work/code-scanning-javascript-demo/code-scanning-javascript-demo/security-report
 
     - uses: actions/upload-artifact@v2
       with:
